@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Row, Col, Spinner } from 'react-bootstrap'
 import Countdown from 'react-countdown'
 import Web3 from 'web3'
+import FAQ from './FAQ.js'
 
 // Import Images + CSS
 import twitter from '../images/socials/twitter.svg'
@@ -64,7 +65,7 @@ function App() {
 
 		} catch (error) {
 			setIsError(true)
-			setMessage("ETH Network or fuck off, all hail vitalik")
+			setMessage("Connect to ETH Mainnet or fuck off, all hail Vitalik")
 		}
 	}
 
@@ -169,24 +170,24 @@ function App() {
 			<main>
 				<section id='welcome' className='welcome'>
 
-					<Row className='header my-3 p-3 mb-0 pb-0'>
+					<Row className='header my-2 p-3 mb-8 pb-0'>
+						<a className='flex social-icons'
+							
+							href="https://twitter.com/moonfrenz"
+							target='_blank'
+							className='circle flex button'>
+							<img src={twitter} alt="Twitter" />
+						</a>
+						<a
+							href={`https://opensea.io/collection/proof-moonbirds`}
+							target='_blank'
+							className='circle flex button'>
+							<img src={opensea} alt="Opensea" />
+						</a>
 						<Col xs={12} md={12} lg={8} xxl={8}>
-							<h1>Decryptr Punks</h1>
-							<p className='sub-header'>Availble on 04 / 19 / 22</p>
-						</Col>
-						<Col className='flex social-icons'>
-							<a
-								href="https://twitter.com/Decryptr22"
-								target='_blank'
-								className='circle flex button'>
-								<img src={twitter} alt="Twitter" />
-							</a>
-							<a
-								href={`https://testnets.opensea.io/collection/decryptr-punks-v2`}
-								target='_blank'
-								className='circle flex button'>
-								<img src={opensea} alt="Opensea" />
-							</a>
+							<h1>Moon FrenZ</h1>
+							<p className='sub-header'>frenZ just vibing on the moon</p>
+						
 						</Col>
 					</Row>
 
@@ -200,7 +201,7 @@ function App() {
 						</Col>
 						<Col md={5} lg={4} xl={5} xxl={4}>
 							<p className='text'>
-								This is just a basic website and minting page that i have put together to practice setting up NFT projects. Hit the "Learn More" button below to see how you can be part of testnet blockchain history!
+								Frenz joining forces on the moon, spreading good vibes, positivity, and wealth for everyone involved. Every Moon Fren will need a moon pet right? how does a pet owl sound? ;)
 							</p>
 							<a href="#about" className='button mx-3'>Learn More!</a>
 						</Col>
@@ -210,27 +211,27 @@ function App() {
 				<section id='about' className='about'>
 
 					<Row className='flex m-3'>
-						<h2 className='text-center p-3'>Decryptr Punks Info:</h2>
+						<h2 className='text-center p-3'>Moon FrenZ Takeover</h2>
 						<Col md={5} lg={4} xl={5} xxl={4} className='text-center'>
 							<img src={showcase} alt="Multiple Crypto Punks" className='showcase' />
 						</Col>
-						<Col md={5} lg={4} xl={5} xxl={4}>
+						<Col md={5} lg={4} xl={5} xxl={5}>
 							{isError ? (
 								<p>{message}</p>
 							) : (
 								<div>
-									<h3>Mint your Decryptr Punk now!</h3>
+									<h3>What does it mean to be a Moon Fren?</h3>
 									<ul>
-										<li>There is only 888 Decryptr Punks available to mint</li>
-										<li>All hail vitalik, ETH or die. Fuck off solona. Free minting on Rinkeby Testnet</li>
-										<li>Go see your shit on opensea after you mint  (1 punk per account bc im stingy)</li>
-										<li>Once you mint, do the right thing and right click save the punk you get and keep it forever bc this project is never hiting the mainnet</li>
+										<li>---- Frenz have degen qualities, never opposed to an all nighter of weed, coffee, and NFTs</li>
+										<li>--- All frenz come together at the place we find ourselves the most, the moon. Counting the USD value of our ETH</li>
+										<li>-- You dont give frenz a roadmap... expecially when we are already on the moon. So, we have no roadmap here. Just letting frenz be frenz</li>
+										<li>- MoonFrenz NFT's have no utility, no roadmap, no whitepaper, just a twitter, a website, and vibes</li>
 									</ul>
 
 									{isMinting ? (
 										<Spinner animation="border" className='p-3 m-2' />
 									) : (
-										<button onClick={mintNFTHandler} className='button mint-button mt-3'>Mint</button>
+										<button onClick={mintNFTHandler} className='button mint-button mt-3'>Become Frenz</button>
 									)}
 
 									{ownerOf.length > 0 &&
@@ -245,15 +246,18 @@ function App() {
 								</div>
 							)}
 						</Col>
+						
 					</Row>
-
 					<Row style={{ marginTop: "100px" }}>
 						<Col>
+						<h2 className='text-center p-2'>FAQ</h2>
+						<FAQ />
 							{openPunks &&
 								<a
 									href={`${explorerURL}/address/${openPunks._address}`}
 									target='_blank'
 									className='text-center'>
+									<p>Smart Contract Address:</p>
 									{openPunks._address}
 								</a>
 							}

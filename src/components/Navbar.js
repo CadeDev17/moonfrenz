@@ -1,4 +1,4 @@
-import logo from '../images/Imb_labs.png'
+import logo from '../images/MFfontlogo.jpg'
 
 const Navbar = ({ web3Handler, account, explorerURL }) => {
     return (
@@ -10,7 +10,7 @@ const Navbar = ({ web3Handler, account, explorerURL }) => {
                 rel="noopener noreferrer"
             >
                 <img src={logo} className="App-logo" alt="logo" />
-                IMB Labs
+                MoonFrenz.io
             </a>
 
             {account ? (
