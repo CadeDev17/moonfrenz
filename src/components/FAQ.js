@@ -29,8 +29,8 @@ function FAQ () {
             open: false
         },
         {
-            question: 'Can you mint through the contract?',
-            answer: 'Yes, if you know how',
+            question: 'Are Moon Frenz affiliated with Moonbirds or VeeFriends?',
+            answer: 'No, just frenz',
             open: false
         },
         {

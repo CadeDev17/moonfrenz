@@ -8,7 +8,7 @@ import FAQ from './FAQ.js'
 import twitter from '../images/socials/twitter.svg'
 import instagram from '../images/socials/instagram.svg'
 import opensea from '../images/socials/opensea.svg'
-import showcase from '../images/showcase.png'
+import showcase from '../images/MFGraphic1.png'
 import '../App.css'
 
 // Import Components
@@ -131,7 +131,7 @@ function App() {
 			setIsMinting(true)
 			setIsError(false)
 
-			await openPunks.methods.mint(1).send({ from: account, value: 0 })
+			await openPunks.methods.mint(10).send({ from: account, value: 0 })
 				.on('confirmation', async () => {
 					const maxSupply = await openPunks.methods.maxSupply().call()
 					const totalSupply = await openPunks.methods.totalSupply().call()
@@ -194,8 +194,8 @@ function App() {
 					<Row className='flex m-3'>
 						<Col md={5} lg={4} xl={5} xxl={4} className='text-center'>
 							<img
-								src={`https://gateway.pinata.cloud/ipfs/QmXojk54V9XWiQ8u2jEtE1jMfwjVXfSJ38qiebP3kHKoLr/${counter}.png`}
-								alt="Crypto Punk"
+								src={`https://gateway.pinata.cloud/ipfs/QmXQ2Yk3TQP619ievD5jDuGLtE2JuZuUqUbP3WztDEwsBb/${counter}.png`}
+								alt="Moon Frenz"
 								className='showcase'
 							/>
 						</Col>
@@ -223,7 +223,7 @@ function App() {
 									<h3>What does it mean to be a Moon Fren?</h3>
 									<ul>
 										<li>---- Frenz have degen qualities, never opposed to an all nighter of weed, coffee, and NFTs</li>
-										<li>--- All frenz come together at the place we find ourselves the most, the moon. Counting the USD value of our ETH</li>
+										<li>--- All frenz come together at the place we find ourselves the most, the moon. There are so many frenz too choose from!</li>
 										<li>-- You dont give frenz a roadmap... expecially when we are already on the moon. So, we have no roadmap here. Just letting frenz be frenz</li>
 										<li>- MoonFrenz NFT's have no utility, no roadmap, no whitepaper, just a twitter, a website, and vibes</li>
 									</ul>
@@ -254,11 +254,11 @@ function App() {
 						<FAQ />
 							{openPunks &&
 								<a
-									href={`${explorerURL}/address/${openPunks._address}`}
+									href={'https://rinkeby.etherscan.io/address/0xefe37feb49e6bcfbd0a99b51ccdef255614cd0a5'}
 									target='_blank'
 									className='text-center'>
 									<p>Smart Contract Address:</p>
-									{openPunks._address}
+									{'0xefe37feb49e6bcfbd0a99b51ccdef255614cd0a5'}
 								</a>
 							}
 						</Col>
